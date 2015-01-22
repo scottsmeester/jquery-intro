@@ -27,13 +27,13 @@ $('body').append('<ul><li>list iem 1</li><li>list item 2</li><li>list item 3</li
 	$('h3').append('!');
 
 	// confirm person wants to click that...
-	$('a').click(function() {
+	$('a').click(function(e) {
 		// e.preventDefault();
 		var choice = confirm('Are you sure?');
 
 		if (choice === false) {
-			$(this).remove();
-			return false;
+			$(this).attr('href', '#');
+			e.preventDefault();
 		}
 	});
 
